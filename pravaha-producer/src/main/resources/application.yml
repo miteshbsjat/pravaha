@@ -1,0 +1,19 @@
+server:
+  port: 8060
+spring:
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.add.type.headers: true
+        # Reliability Configurations
+        acks: 1
+        enable.idempotence: true
+        retries: 3
+        max.in.flight.requests.per.connection: 5
+
+kafka:
+  topic:
+    name: order-events
+    partitions: 3

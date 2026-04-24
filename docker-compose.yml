@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  pravaha-producer:
+    build: ./pravaha-producer
+    container_name: pravaha-producer
+    ports:
+      - "8060:8060"
+    environment:
+      - KAFKA_BOOTSTRAP_SERVERS=kafka1:9092
+
+  pravaha-consumer:
+    build: ./pravaha-consumer
+    container_name: pravaha-consumer
+    ports:
+      - "8070:8070"
+    environment:
+      - KAFKA_BOOTSTRAP_SERVERS=kafka1:9092
