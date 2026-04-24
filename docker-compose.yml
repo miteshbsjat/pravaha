@@ -7,11 +7,7 @@ services:
     ports:
       - "8060:8060"
     environment:
-      - KAFKA_BOOTSTRAP_SERVERS=kafka1:9092
-    extra_hosts:
-      - "kafka1:172.20.0.2"
-      - "kafka2:172.20.0.3"
-      - "kafka3:172.20.0.4"
+      - KAFKA_BOOTSTRAP_SERVERS=kafka1:9092,kafka2:9092,kafka3:9092
 
   pravaha-consumer:
     build: ./pravaha-consumer
@@ -20,7 +16,3 @@ services:
       - "8070:8070"
     environment:
       - KAFKA_BOOTSTRAP_SERVERS=kafka1:9092
-    extra_hosts:
-      - "kafka1:172.20.0.2"
-      - "kafka2:172.20.0.3"
-      - "kafka3:172.20.0.4"

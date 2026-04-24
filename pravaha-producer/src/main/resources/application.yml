@@ -8,8 +8,8 @@ spring:
       properties:
         spring.json.add.type.headers: true
         # Reliability Configurations
-        acks: 1
-        # enable.idempotence: true
+        acks: all
+        enable.idempotence: true
         retries: 3
         max.in.flight.requests.per.connection: 5
 
