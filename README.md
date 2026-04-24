@@ -49,12 +49,10 @@ To build the images and start the distributed system, run the following from the
 
 ```bash
 # Compilation
-```
 cd pravaha-producer
 mvn clean package -DskipTests
 cd pravaha-consumer
 mvn clean package -DskipTests
-```
 
 # Build and deploy the containers in detached mode
 docker-compose up -d --build
